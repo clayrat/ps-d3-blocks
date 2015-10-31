@@ -1,0 +1,10 @@
+{
+  "name": "ps-d3-blocks",
+  "ignore": [],
+  "dependencies": {
+    "purescript-d3": "clayrat/purescript-d3#master",
+    "purescript-math": "*",
+    "purescript-console": "^0.1.0",
+    "purescript-integers": "^0.2.0"
+  }
+}
