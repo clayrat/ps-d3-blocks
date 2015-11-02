@@ -9,7 +9,7 @@ var gulp      	= require('gulp')
 var jsFileName = 'examples.js';
 
 var paths = {
-	purescripts: 'src/*.purs',
+	purescripts: 'src/**/*.purs',
 	javascripts: 'src/' + jsFileName,
   resources: ['resources/**/*'],
 	bowerSrc: 'bower_components/purescript-*/src/**/*.purs',
@@ -22,7 +22,7 @@ gulp.task('compile', function(cb) {
     src: [paths.purescripts, paths.bowerSrc],
     ffi: paths.ffi,
 		output: "output",
-    module: "Graphics.D3.Examples"
+    module: "Blocks"
 	});
   return psc;
 });
@@ -32,7 +32,10 @@ gulp.task('bundle', ['compile'], function() {
     src: 'output/**/*.js',
     output: 'app/examples.js',
     module: [
-      'RainbowCircle']
+      'Blocks.RainbowCircle',
+      'Blocks.ArcCorners4',
+      'Blocks.CounterclockwiseArc'
+]
   });
 });
 
