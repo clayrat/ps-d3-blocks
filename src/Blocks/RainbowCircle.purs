@@ -12,7 +12,7 @@ module Blocks.RainbowCircle where
   import Graphics.D3.Util
 
   -- http://bl.ocks.org/mbostock/45943c4af772e38b4f4e
-  
+
 {-
 var π = Math.PI,
     τ = 2 * π,
@@ -54,7 +54,7 @@ d3.select(self.frameElement).style("height", height + "px");
             .. endAngle' (\d -> d + tau / n * 1.1)
 
     rootSelect "svg" .. append "g"
-      .. attr "transform" ("translate(" ++ show (canvasWidth / 2.0) ++ "," ++ show (canvasHeight / 2.0) ++ ")")
+      .. attr "transform" (translateStr (canvasWidth / 2.0) (canvasHeight / 2.0))
       .. selectAll "path"
         .. bindData (range 0.0 tau (tau/n))
       .. enter .. append "path"

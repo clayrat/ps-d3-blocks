@@ -66,7 +66,7 @@ svg.selectAll("path")
             .. attr "width" canvasWidth
             .. attr "height" canvasHeight
           .. append "g"
-            .. attr "transform" ("translate(" ++ show (canvasWidth / 2.0) ++ "," ++ show (canvasHeight / 2.0) ++ ")")
+            .. attr "transform" (translateStr (canvasWidth / 2.0) (canvasHeight / 2.0))
 
     svg ... selectAll "path"
             .. bindData pieData
