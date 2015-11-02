@@ -1,6 +1,6 @@
 module Blocks.RainbowCircle where
 
-  import Prelude(return,unit,Unit(),(>>=), bind, id, (++), ($), show, (+), (-), (*), (/), flip)
+  import Prelude hiding (append)
   import Control.Monad.Eff
 
   import Math (pi)
@@ -43,19 +43,19 @@ d3.select(self.frameElement).style("height", height + "px");
   outRadius = canvasWidth / 2.0 - 20.0
   inRadius = outRadius - 80.0
 
-  segment = arc
+  main = do
+    segment <- arc
             .. outerRadius outRadius
             .. innerRadius inRadius
             .. startAngle' id
             .. endAngle' (\d -> d + tau / n * 1.1)
 
-  main = do
     rootSelect "svg" .. append "g"
       .. attr "transform" ("translate(" ++ show (canvasWidth / 2.0) ++ "," ++ show (canvasHeight / 2.0) ++ ")")
       .. selectAll "path"
         .. bindData (range 0.0 tau (tau/n))
       .. enter .. append "path"
-        .. (\s -> segment .. (flip (attr "d") s))
+        .. attr "d" segment 
       .. style' "fill" (\d -> hsl (d * 360.0 / tau) 1.0 0.5 )
 {-
     rootSelect self.frameElement
