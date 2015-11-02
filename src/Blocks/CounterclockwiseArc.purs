@@ -48,6 +48,7 @@ g.append("text")
   canvasWidth = 960.0
   canvasHeight = 500.0
   radius = canvasHeight / 2.0 - 20.0
+  qpi = pi / 4.0
 
   main = do
     arc <- arc
@@ -60,8 +61,8 @@ g.append("text")
 
     g <- svg ... selectAll "g"
           .. bindData ([
-                  {startAngle: pi / 4.0,       endAngle: 3.0 * pi / 4.0, text: "This is a clockwise arc."},
-                  {startAngle: 3.0 * pi / 4.0, endAngle: pi / 4.0,       text: "This is a counterclockwise arc."}
+                  {startAngle:       qpi, endAngle: 3.0 * qpi, text: "This is a clockwise arc."},
+                  {startAngle: 3.0 * qpi, endAngle:       qpi, text: "This is a counterclockwise arc."}
                 ])
         .. enter .. append "g"
           .. attr'' "transform" (\_ i -> translateStr ((i + 0.5) * canvasWidth / 3.0) (canvasHeight / 2.0))
@@ -75,4 +76,4 @@ g.append("text")
         .. attr "dy" "-5.0"
       .. append "textPath"
         .. attr'' "xlink:href" (\_ i -> "#arc-" ++ show i)
-        .. text' (\d -> d.text)
+        .. text' (_.text)
