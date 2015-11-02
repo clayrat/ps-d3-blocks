@@ -1,5 +1,5 @@
 {
-  "name": "purescript-d3-examples",
+  "name": "ps-d3-blocks",
   "description": "PureScript + D3 examples",
   "license": "MIT",
   "devDependencies": {
