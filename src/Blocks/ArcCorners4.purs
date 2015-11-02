@@ -71,5 +71,5 @@ svg.selectAll("path")
     svg ... selectAll "path"
             .. bindData pieData
       .. enter .. append "path"
-        .. style'' "fill" (\_ -> \i -> color i)
+        .. style'' "fill" (\_ i -> color i)
         .. attr "d" arc
