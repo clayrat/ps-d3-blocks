@@ -10,6 +10,9 @@ module Blocks.RainbowCircle where
   import Graphics.D3.Selection
   import Graphics.D3.SVG.Shape
   import Graphics.D3.Util
+
+  -- http://bl.ocks.org/mbostock/45943c4af772e38b4f4e
+  
 {-
 var π = Math.PI,
     τ = 2 * π,
@@ -55,7 +58,7 @@ d3.select(self.frameElement).style("height", height + "px");
       .. selectAll "path"
         .. bindData (range 0.0 tau (tau/n))
       .. enter .. append "path"
-        .. attr "d" segment 
+        .. attr "d" segment
       .. style' "fill" (\d -> hsl (d * 360.0 / tau) 1.0 0.5 )
 {-
     rootSelect self.frameElement
