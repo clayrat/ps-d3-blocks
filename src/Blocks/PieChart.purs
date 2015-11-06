@@ -81,7 +81,7 @@ d3.csv("data.csv", function(error, data) {
 
     arc <- arc
             .. outerRadius (radius - 10.0)
-            .. innerRadius 0.0
+            .. innerRadius 0.0   -- replace with (radius - 70.0) to get donut
 
     pieL <- pieLayout
             .. noSort

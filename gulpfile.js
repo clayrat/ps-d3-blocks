@@ -35,7 +35,8 @@ gulp.task('bundle', ['compile'], function() {
       'Blocks.RainbowCircle',
       'Blocks.ArcCorners4',
       'Blocks.CounterclockwiseArc',
-      'Blocks.PieChart'
+      'Blocks.PieChart',
+      'Blocks.DonutMultiples'
 ]
   });
 });
