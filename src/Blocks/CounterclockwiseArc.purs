@@ -72,8 +72,8 @@ g.append("text")
         .. attr'' "id" (\_ i -> "arc-" ++ show i)
 
     g ... append "text"
-        .. attr "dx" "5.0"
-        .. attr "dy" "-5.0"
+        .. attr "dx" 5.0
+        .. attr "dy" (-5.0)
       .. append "textPath"
         .. attr'' "xlink:href" (\_ i -> "#arc-" ++ show i)
         .. text' (_.text)

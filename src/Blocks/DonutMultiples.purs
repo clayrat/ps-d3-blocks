@@ -144,13 +144,13 @@ module Blocks.DonutMultiples where
           .. attr'' "transform" (\_ i -> translateStr 0.0 (i * 20.0) )
 
       legend ... append "rect"
-          .. attr "width" "18"
-          .. attr "height" "18"
+          .. attr "width" 18.0
+          .. attr "height" 18.0
           .. style' "fill" colorF
 
       legend ... append "text"
-          .. attr "x" "24"
-          .. attr "y" "9"
+          .. attr "x" 24.0
+          .. attr "y" 9.0
           .. attr "dy" ".35em"
           .. text' id
 
